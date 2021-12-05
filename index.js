@@ -45,8 +45,8 @@ multi = true
 nopref = false
 allpref = false
 banChats = false
-ownerNumber = '6285235637978@s.whatsapp.net'
-creator = "6285235637978@s.whatsapp.net"
+ownerNumber = '62857700173269@s.whatsapp.net'
+creator = "62857700173269@s.whatsapp.net"
 baterai = {
 battery: "" || "Tidak Terdeteksi",
 isCharge: "" || false
@@ -113,8 +113,8 @@ module.exports = client = async (client, mek) => {
 		mention != undefined ? mention.push(mentionByReply) : []
 		const mentionUser = mention != undefined ? mention.filter(n => n) : []
 		const sendKontak = (from, nomor, nama) => {
-		const vcard = 'BEGIN:VCARD\n' + 'VERSION:3.0\n' + 'FN:' + nama + '\n' + `ORG:By Pito Dev\n` + 'TEL;type=CELL;type=VOICE;waid=' + nomor + ':+' + nomor + '\n' + 'END:VCARD'
-			client.sendMessage(from, { displayname: nama, vcard: vcard}, MessageType.contact, {quoted:finv, contextInfo: { forwardingScore: 999, isForwarded: true, externalAdReply: {title: `${jmn} - ${week} ${weton} - ${calender}`,body:"PitoDev",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://pitodevid.github.io"}}})
+		const vcard = 'BEGIN:VCARD\n' + 'VERSION:3.0\n' + 'FN:' + nama + '\n' + `ORG:By Yusuf\n` + 'TEL;type=CELL;type=VOICE;waid=' + nomor + ':+' + nomor + '\n' + 'END:VCARD'
+			client.sendMessage(from, { displayname: nama, vcard: vcard}, MessageType.contact, {quoted:finv, contextInfo: { forwardingScore: 999, isForwarded: true, externalAdReply: {title: `${jmn} - ${week} ${weton} - ${calender}`,body:"Yusuf",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://github.com"}}})
 			}
 		cmhit.push(command)
 		const conts = mek.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
@@ -325,31 +325,31 @@ module.exports = client = async (client, mek) => {
 			stst = await client.getStatus(`${sender.split('@')[0]}@c.us`)
 			stst = stst.status == 401 ? '' : stst.status
 			num = await fetchJson(`https://numlookupapi.com/api/validate/${senderNumber}`, {method: 'get'})
-			menu = `\n${tampilUcapan} ${pushname}\n\nNama Owner : PitoDevID\nNomor Owner : @${ownerNumber.split('@')[0]}\nBattery : ${baterai.battery}\nCharge : ${baterai.isCharge}\nMode : ${banChats ? 'Self-mode' : 'Public-mode'}\nTotal Hit : 6251${cmhit.length}\n\nINFO USER\n\nStatus : ${isOwner ? 'Owner' : 'User'}\nNama : ${pushname}\nBio : ${stst}\nNomor : @${sendernya.split('@')[0]}\nInfo Nomor : ${num.line_type} - ${num.country_name} - ${num.carrier}`
-			sendButImage(from, `${menu}`, "PitoDev", ofrply, 
+			menu = `\n${tampilUcapan} ${pushname}\n\nNama Owner : Yusuf\nNomor Owner : @${ownerNumber.split('@')[0]}\nBattery : ${baterai.battery}\nCharge : ${baterai.isCharge}\nMode : ${banChats ? 'Self-mode' : 'Public-mode'}\nTotal Hit : 6251${cmhit.length}\n\nINFO USER\n\nStatus : ${isOwner ? 'Owner' : 'User'}\nNama : ${pushname}\nBio : ${stst}\nNomor : @${sendernya.split('@')[0]}\nInfo Nomor : ${num.line_type} - ${num.country_name} - ${num.carrier}`
+			sendButImage(from, `${menu}`, "Yusuf", ofrply, 
 			[{buttonId:`${prefix}command`, buttonText:{displayText:'COMMAND'}, type:1 },
 			{buttonId:`${prefix}creator`, buttonText:{displayText:'CREATOR'}, type:1 },
 			{buttonId:`${prefix}sc`, buttonText:{displayText:'SOURCE CODE'}, type:1 }],
 			{
 				quoted:finv, contextInfo: {
-					mentionedJid: [ownerNumber,sendernya], forwardingScore: 999, isForwarded: true, externalAdReply: {title: `${jmn} - ${week} ${weton} - ${calender}`,body:"PitoDev",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://pitodevid.github.io"}}})
+					mentionedJid: [ownerNumber,sendernya], forwardingScore: 999, isForwarded: true, externalAdReply: {title: `${jmn} - ${week} ${weton} - ${calender}`,body:"Yusuf",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://youtube.com/UCHIMODDER"}}})
 			break
 		case 'allmenu': case 'command':
 			menu = `\n${tampilUcapan} ${pushname}\n\n\nSTICKER MENU\n\n${prefix}sticker\n${prefix}stickerwm nama|author\n${prefix}take nama|author\n${prefix}attp <text>\n\nFUN MENU\n\n${prefix}fast\n${prefix}slow\n${prefix}reverse\n${prefix}gtts [kode negara] <text>\n${prefix}readmore\n${prefix}detikvn\n${prefix}detikvideo\n${prefix}caripesan <text>\n${prefix}listgroup\n${prefix}status\n${prefix}wiki <text>\n${prefix}kalkulator 1+1=\n${prefix}translate\n\nDOWNLOAD MENU\n\n${prefix}ytmp4 <link>\n${prefix}ytmp3 <link>\n${prefix}ytsearch <text>\n${prefix}igdl <link>\n${prefix}tiktokdl <link>\n\nGROP MENU\n\n${prefix}setnamegc <nama group>\n${prefix}setdeskgc <desk group>\n${prefix}kick @tag member\n${prefix}add 62xxxxx\n${prefix}hidetag <text>\n${prefix}sider\n${prefix}tag\n${prefix}tagme\n${prefix}demote @tag admin\n${prefix}promote @tag member\n${prefix}linkgroup\n${prefix}resetlinkgroup\n${prefix}opengc\n${prefix}closegc\n${prefix}antilink 1/0\n${prefix}antivirtex 1/0\n${prefix}tictactoe @tag teman\n${prefix}delttt\n\nASUPAN MENU\n\n${prefix}asupancecan\n${prefix}asupanhijab\n${prefix}asupansantuy\n${prefix}asupanukty\n${prefix}asupanbocil\n${prefix}asupanrika\n\nOWNER MENU\n\n${prefix}leave\n${prefix}public\n${prefix}self\n${prefix}setprefix\n${prefix}jadiv\n\n`
-			sendButImage(from, `${menu}`, "By PitoDevID", ofrply, 
+			sendButImage(from, `${menu}`, "By Yusuf", ofrply, 
 			[{buttonId:`${prefix}sc`, buttonText:{displayText:'SOURCE CODE'}, type:1 }],
 			{
 				quoted:finv, contextInfo: {
-					forwardingScore: 999, isForwarded: true, externalAdReply: {title: `${jmn} - ${week} ${weton} - ${calender}`,body:"PitoDev",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://pitodevid.github.io"}}})
+					forwardingScore: 999, isForwarded: true, externalAdReply: {title: `${jmn} - ${week} ${weton} - ${calender}`,body:"Yusuf",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://youtube.com/UCHIMODDER"}}})
 			break
 		case 'status':
-			menu = `\n\nCreator : @${creator.split('@')[0]}\nOwner : PitoDevID\nNomor Owner : @${ownerNumber.split('@')[0]}\nMode : ${banChats ? 'Self-mode' : 'Public-mode'}\nBattery : ${baterai.battery}\nCharge : ${baterai.isCharge}\nWa Version : ${client.user.phone.wa_version}\nStatus : ${isOwner ? 'Owner' : 'User'}\n\n`
-			sendButImage(from, `${menu}`, 'PitoDev', ofrply,
+			menu = `\n\nCreator : @${creator.split('@')[0]}\nOwner : Yusuf\nNomor Owner : @${ownerNumber.split('@')[0]}\nMode : ${banChats ? 'Self-mode' : 'Public-mode'}\nBattery : ${baterai.battery}\nCharge : ${baterai.isCharge}\nWa Version : ${client.user.phone.wa_version}\nStatus : ${isOwner ? 'Owner' : 'User'}\n\n`
+			sendButImage(from, `${menu}`, 'Yusuf', ofrply,
 			[{buttonId:`${prefix}menu`, buttonText:{displayText:'MENU'}, type:1 },
 			{buttonId:`${prefix}sc`, buttonText:{displayText:'SOURCE CODE'}, type:1 }],
 			{
 				quoted:finv, contextInfo: {
-					mentionedJid: [ownerNumber,creator], forwardingScore: 999, isForwarded: true, externalAdReply: {title: `${jmn} - ${week} ${weton} - ${calender}`,body:"PitoDev",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://pitodevid.github.io"}}})
+					mentionedJid: [ownerNumber,creator], forwardingScore: 999, isForwarded: true, externalAdReply: {title: `${jmn} - ${week} ${weton} - ${calender}`,body:"Yusuf",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:"https://youtube.com/UCHIMODDER"}}})
 			break
 		case 'setnamegc': 
 			if (!isGroup) return reply(mess.only.group)
@@ -371,10 +371,10 @@ module.exports = client = async (client, mek) => {
 				client.groupLeave(from)
 			break
 		case 'owner': case 'creator': case 'developer': case 'author':
-			sendKontak(from, creator, 'PitoDev')
+			sendKontak(from, creator, 'Yusuf')
 			break
 		case 'sc': case 'sourcecode':
-			client.sendMessage(from, { text: "https://pitodevid.github.io", matchedText: 'https://pitodevid.github.io', description: "", title: "Don't click here !!!", jpegThumbnail: ofrply }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
+			client.sendMessage(from, { text: "https://youtube.com/UCHIMODDER", matchedText: 'https://youtube.com/UCHIMODDER', description: "", title: "Don't click here !!!", jpegThumbnail: ofrply }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
 			break
 		case 'public':
 			if (!isOwner && !mek.key.fromMe) return
@@ -478,7 +478,7 @@ module.exports = client = async (client, mek) => {
 			encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 			media = await client.downloadAndSaveMediaMessage(encmedia)
 			anu = args.join(' ').split('|')
-			satu = anu[0] !== '' ? anu[0] : 'PitoDev'
+			satu = anu[0] !== '' ? anu[0] : 'Yusuf'
 			dua = typeof anu[1] !== 'undefined' ? anu[1] : ``
 			require('./lib/fetcher.js').createExif(satu, dua)
 			require('./lib/fetcher.js').modStick(media, client, mek, from)
