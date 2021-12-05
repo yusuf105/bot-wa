@@ -30,6 +30,7 @@ const Math_js = require('mathjs')
 const translate = require('@vitalets/google-translate-api')
 const fetch = require('node-fetch')
 const ffmpeg = require('fluent-ffmpeg')
+const { jadibot, stopjadibot, listjadibot } = require('./lib/jadibot.js')
 const antilink = JSON.parse(fs.readFileSync('./database/antilink.json'))
 const antivirtex = JSON.parse(fs.readFileSync('./database/antivirtex.json'))
 const { wikiSearch } = require('./lib/wiki.js')
@@ -373,6 +374,11 @@ module.exports = client = async (client, mek) => {
 		case 'owner': case 'creator': case 'developer': case 'author':
 			sendKontak(from, creator, 'Yusuf')
 			break
+                case 'jadibot':
+reply('Selamat kamu Menjadi bot')
+
+        jadibot(reply,client,from)
+        break
 		case 'sc': case 'sourcecode':
 			client.sendMessage(from, { text: "https://youtube.com/UCHIMODDER", matchedText: 'https://youtube.com/UCHIMODDER', description: "", title: "Don't click here !!!", jpegThumbnail: ofrply }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
 			break
