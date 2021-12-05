@@ -1,1 +1,1 @@
-worker: bash install.sh && @adiwajshing/baileys && npm start
+worker: bash install.sh && npm start
