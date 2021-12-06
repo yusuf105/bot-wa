@@ -527,6 +527,20 @@ reply('Selamat kamu Menjadi bot')
 				fs.unlinkSync(ran)
 			})
 			break
+case 'toimg':
+			if (!isQuotedSticker) return reply('𝗥𝗲𝗽𝗹𝘆/𝘁𝗮𝗴 𝘀𝘁𝗶𝗰𝗸𝗲𝗿 !')
+			reply(mess.wait)
+			encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+			media = await client.downloadAndSaveMediaMessage(encmedia)
+			ran = getRandom('.png')
+			exec(`ffmpeg -i ${media} ${ran}`, (err) => {
+			fs.unlinkSync(media)
+			if (err) return reply('Yah gagal, coba ulangi ^_^')
+			buffer = fs.readFileSync(ran)
+			fakethumb(buffer,'NIH')
+			fs.unlinkSync(ran)
+			})
+			break
 		case 'slow':
 			if (!isQuotedVideo) return reply('Reply videonya!')
 			reply(mess.wait)
