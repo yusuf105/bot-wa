@@ -440,13 +440,16 @@ reply('Selamat kamu Menjadi bot')
 			}
 			client.sendMessage(from, optionshidetag, text)
 			break
-case 'waifu':
-              kon = (`https://api.waifu.pics/sfw/${command}`)
-anu = await getBuffer(kon)
-buff = anu.url
-              
+              case 'neko':
+              case 'shinobu':
+              case 'megumin':
+              case 'cry':
+              case 'awoo':              
+              case 'waifu':
+              kon = await fetchJson(`https://api.waifu.pics/sfw/${command}`)
+              anu = await getBuffer(kon.url)
               buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `➡️Next`},type:1}]
-              imageMsg = (await client.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
+              imageMsg = (await client.prepareMessageMedia(anu, "imageMessage", { thumbnail: anu, })).imageMessage
               buttonsMessage = {footerText:'✗✗✗ Yusuf', imageMessage: imageMsg,
               contentText:`Subrek yt : UCHIMODDER`,buttons,headerType:4}
               prep = await client.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
