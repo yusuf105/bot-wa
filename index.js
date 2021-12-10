@@ -89,7 +89,7 @@ module.exports = client = async (client, mek) => {
 		const args = body.trim().split(/ +/).slice(1)
 		const isCmd = body.startsWith(prefix)
 		const q = args.join(' ')
-const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
+
 		const botNumber = client.user.jid
 		const botNumberss = client.user.jid + '@c.us'
 		const isGroup = from.endsWith('@g.us')
