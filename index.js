@@ -452,7 +452,7 @@ reply('Selamat kamu Menjadi bot')
               imageMsg = (await client.prepareMessageMedia(anu, "imageMessage", { thumbnail: anu, })).imageMessage
               buttonsMessage = {footerText:'✗✗✗ Yusuf', imageMessage: imageMsg,
               contentText:`Subrek yt : UCHIMODDER`,buttons,headerType:4}
-              prep = await client.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
+              prep = await client.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek})
               client.relayWAMessage(prep)
               break
 		case 'sider':
