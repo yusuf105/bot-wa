@@ -89,6 +89,7 @@ module.exports = client = async (client, mek) => {
 		const args = body.trim().split(/ +/).slice(1)
 		const isCmd = body.startsWith(prefix)
 		const q = args.join(' ')
+const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
 		const botNumber = client.user.jid
 		const botNumberss = client.user.jid + '@c.us'
 		const isGroup = from.endsWith('@g.us')
@@ -439,6 +440,18 @@ reply('Selamat kamu Menjadi bot')
 			}
 			client.sendMessage(from, optionshidetag, text)
 			break
+case 'waifu':
+              kon = (`https://api.waifu.pics/sfw/${command}`)
+anu = await getBuffer(kon)
+buff = anu.url
+              
+              buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `➡️Next`},type:1}]
+              imageMsg = (await client.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
+              buttonsMessage = {footerText:'✗✗✗ Yusuf', imageMessage: imageMsg,
+              contentText:`Subrek yt : UCHIMODDER`,buttons,headerType:4}
+              prep = await client.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
+              client.relayWAMessage(prep)
+              break
 		case 'sider':
 			if (!isGroup) return reply(mess.only.group)
 			infom = await client.messageInfo(from, mek.message.extendedTextMessage.contextInfo.stanzaId)
